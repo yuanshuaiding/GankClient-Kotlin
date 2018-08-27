@@ -1,11 +1,11 @@
 ext {
 
-  compileSdkVersion = 24
+  compileSdkVersion = 27
   minSdkVersion = 15
-  targetSdkVersion = 22
-  buildToolsVersion = '24.1.0'
+  targetSdkVersion = 27
+  buildToolsVersion = '27.0.3'
 
-  supportLibVersion = "25.0.0"
+  supportLibVersion = "27.1.1"
   retrofitLibVersion = "2.1.0"
   okhttpLibVersion = "3.4.2"
   daggerLibVersion = "2.7"

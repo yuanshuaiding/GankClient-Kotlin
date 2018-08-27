@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_about.*
  * Created by wing on 16-11-24.
  */
 class FragmentHolder : BaseBingingFragment<FragmentAboutBinding>() {
-    override fun createDataBinding(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): FragmentAboutBinding {
+    override fun createDataBinding(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): FragmentAboutBinding {
         return FragmentAboutBinding.inflate(inflater, container, false)
     }
 

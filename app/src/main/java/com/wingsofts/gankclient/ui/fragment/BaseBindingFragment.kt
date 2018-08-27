@@ -13,18 +13,18 @@ import android.view.ViewGroup
  */
 abstract class BaseBingingFragment<B:ViewDataBinding> : Fragment(){
      lateinit var mBinding : B
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mBinding = createDataBinding(inflater,container,savedInstanceState)
         initView()
         return mBinding.root
 
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    abstract fun  createDataBinding(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): B
+    abstract fun  createDataBinding(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): B
 
     abstract fun initView()
 

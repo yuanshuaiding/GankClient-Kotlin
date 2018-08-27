@@ -40,14 +40,14 @@ class AndroidFragment : BaseBingingFragment<ViewRecyclerBinding>(), FuckGoodsCon
     private lateinit var mAdapter: FuckGoodsAdapter
     private var mPage = 1
     @Inject lateinit var mPresenter: FuckGoodsPresenter
-    override fun createDataBinding(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun createDataBinding(inflater: LayoutInflater, container: ViewGroup?,
                                    savedInstanceState: Bundle?): ViewRecyclerBinding {
         return ViewRecyclerBinding.inflate(inflater, container, false)
     }
 
     override fun initView() {
         mAdapter = FuckGoodsAdapter(mList)
-        context.getMainComponent().plus(FuckGoodsModule(this)).inject(this)
+        context!!.getMainComponent().plus(FuckGoodsModule(this)).inject(this)
         with(mBinding!!) {
             recyclerView.adapter = mAdapter
             recyclerView.layoutManager = LinearLayoutManager(context)

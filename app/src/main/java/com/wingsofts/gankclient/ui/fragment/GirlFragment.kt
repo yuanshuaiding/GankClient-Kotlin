@@ -34,14 +34,14 @@ class GirlFragment : BaseBingingFragment<ViewRecyclerBinding>(), FuckGoodsContra
 
 
 
-    override fun createDataBinding(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun createDataBinding(inflater: LayoutInflater, container: ViewGroup?,
                                    savedInstanceState: Bundle?): ViewRecyclerBinding {
         return ViewRecyclerBinding.inflate(inflater, container, false)
     }
 
     override fun initView() {
         mAdapter = GirlAdapter(mList)
-        context.getMainComponent().plus(FuckGoodsModule(this)).inject(this)
+        context?.getMainComponent()?.plus(FuckGoodsModule(this))?.inject(this)
         with(mBinding!!) {
             mRecyclerView = recyclerView
             recyclerView.adapter = mAdapter
@@ -67,7 +67,7 @@ class GirlFragment : BaseBingingFragment<ViewRecyclerBinding>(), FuckGoodsContra
 
             val imageView = recyclerView.findViewHolderForAdapterPosition(pos)?.itemView?.findViewById(R.id.iv_girl) as ImageView
 
-            ImageActivity.startActivity(context,imageView,mList[pos].url)
+            context?.let { ImageActivity.startActivity(it,imageView,mList[pos].url) }
         }
 
     }
